@@ -32,7 +32,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS prieksmeti(
 # cur.execute("""INSERT INTO skolens(ID_skolens,vards,uzvards,epasta)VALUES(?,?,?,?)""",saraksts)
 # cur.execute("""INSERT INTO prieksmeti(ID_prieksmets,nosaukums,skolena_ID)VALUES(?,?,?)""",prieksmet)
 
-cur.execute("SELECT * FROM prieksmeti, skolens WHERE skolena_ID = skolens(ID_skolens)")
-
+rez = cur.execute("SELECT vards,uzvards,nosaukums FROM skolens, prieksmeti WHERE skolena_ID = (ID_skolens)")
+print(rez)
 baza.commit()
 cur.close()
