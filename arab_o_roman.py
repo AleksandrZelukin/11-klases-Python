@@ -12,7 +12,7 @@ def to_roman(number):
     return roman
 
 
-print("24 =", to_roman(24))
+print("2025 =", to_roman(2025))
 
 
 def arabic_to_roman(number):
@@ -30,7 +30,7 @@ def arabic_to_roman(number):
 
     return result
 
-print(arabic_to_roman(24))
+print(arabic_to_roman(2025))
 
 rom_num = input()
 
