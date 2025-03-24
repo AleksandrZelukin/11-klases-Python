@@ -1,55 +1,56 @@
 from tkinter import *
 logs=Tk()
-logs.geometry("400x400")
+logs.geometry("600x400")
 logs.title("Trijstura kalkulators")
-lab1 = Label(text="Ievadiet malas garumus")
-lab1.place(x=30,y=10)
+lab = Label(text="Ievadiet trijstura malas garumus",font=("Arial", 18))
+lab.place(relx=.3,rely=.02)
 
-
-# a = int(input("Mala a: "))	# Ievada skaitli a
-# b = int(input("Mala b: "))	# Ievada skaitli b	
-# c = int(input("Mala c: "))	# Ievada skaitli c 
-
-# if a+b>c and a+c>b and b+c>a:	# Ja izpildas šis nosacījums
-#     print("Trijstūris ir iespējams")	# Izvada, ka trijstūris ir iespējams
-#     s = (a+b+c)/2	# Aprēķina pusperimetru
-#     laukums = round(((s*(s-a)*(s-b)*(s-c))**0.5),2)	# Aprēķina laukumu  pēc Herona formulas
-#     print(f"Trijstura laukums ir {laukums}")	# Izvada laukumu
-# else:
-#     print("Trijstūris nav iespējams")    # Izvada, ka trijstūris nav iespējams
-    
-
+lab1 = Label(text="a:")
+lab1.place(relx=.1,rely=.2)
 num1 = Entry(width=10)
-num1.insert(0,"Malas a")
-num1.place(x=40,y=30)
+num1.insert(0,"")
+num1.place(relx=.2,rely=.2)
 
+lab2 = Label(text="b:")
+lab2.place(relx=.1,rely=.3)
 num2 = Entry(width=10)
-num2.insert(0,"Malas b")
-num2.place(x=100,y=30)
+num2.insert(0,"")
+num2.place(relx=.2,rely=.3)
 
+lab3 = Label(text="c:")
+lab3.place(relx=.1,rely=.4)
 num3 = Entry(width=10)
-num3.insert(0,"Malas c")
-num3.place(x=160,y=30)  
+num3.insert(0,"")
+num3.place(relx=.2,rely=.4)  
+
 def s():
     a = int(num1.get())
     b = int(num2.get())
     c = int(num3.get())
+    s = (a+b+c)/2
     if a+b>c and a+c>b and b+c>a:
-        print("Trijstūris ir iespējams")
-        s = (a+b+c)/2
-        # laukums = round(((s*(s-a)*(s-b)*(s-c))**0.5),2)
-        z = ("Trijstura laukums ir:")
+        trijsturis = ("Trijstura laukums ir:")
+        rezultats1.configure(text = trijsturis)
         laukums = round(((s*(s-a)*(s-b)*(s-c))**0.5),2)
-        z2.configure(text = z)
+        rezultats2.configure(text = laukums)
     else:
-        laukums = ("Trijstūris nav iespējams")
-    rezultats.configure(text = laukums)
-    
-    
+        trijsturis = ("Trijsturis nav iespējams")
+        rezultats1.configure(text = trijsturis)
+        rezultats2.configure(text = "")
+        laukums = ""
+        rezultats2.configure(text = laukums)
+        return
+    return
+     
 btn1 = Button(text="Aprēķināt",command=s)
-btn1.place(x=220,y=30) 
-z2 = Label(font=("Arial", 24))
-z2.place(x=10,y=60)   
-rezultats = Label(font=("Arial", 24))
-rezultats.place(x=10,y=120)
+btn1.place(relx=.3,rely=.5) 
+trijsturis = Label(font=("Arial", 18))
+trijsturis.place(relx=.2,rely=.5)   
+rezultats1 = Label(font=("Arial", 18))
+rezultats1.place(relx=.2,rely=.6)
+rezultats2 = Label(font=("Arial", 18))
+rezultats2.place(relx=.2,rely=.7)
+laukums = Label(font=("Arial", 18))
+laukums.place(relx=.2,rely=.8)
+
 logs.mainloop()  
