@@ -42,7 +42,7 @@ def s():
         return
     return
      
-btn1 = Button(text="Aprēķināt",command=s)
+btn1 = Button(text="Aprēķināt",bg="green",fg="lightblue",command=s)
 btn1.place(relx=.3,rely=.5) 
 trijsturis = Label(font=("Arial", 18))
 trijsturis.place(relx=.2,rely=.5)   
@@ -52,5 +52,6 @@ rezultats2 = Label(font=("Arial", 18))
 rezultats2.place(relx=.2,rely=.7)
 laukums = Label(font=("Arial", 18))
 laukums.place(relx=.2,rely=.8)
-
+btn2 = Button(text="Iziet",width=10,bg="red",fg="lightblue",command=logs.quit)
+btn2.place(relx=.6,rely=.5)
 logs.mainloop()  
