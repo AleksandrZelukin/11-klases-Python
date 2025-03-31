@@ -1,4 +1,4 @@
-a="Sveiki,Otrais!"
+a="Sveiki,Rīga!"
 
 datne = open("dati.txt","a",encoding="UTF-8")
 # datne.write(str(a))
