@@ -9,6 +9,10 @@ phonebook = json.load(datne)  # ielādē objektu no datnes
 def add_contact(name, phone_number):
     """Add a contact to the phonebook."""
     phonebook[name] = phone_number
+    # atver datni rakstīšanai JSON formātā
+    datne = open("phonebook.json", "w", encoding="UTF-8")
+    json.dump(phonebook, datne)  # saglabā objektu datnē
+    datne.close() 
     print(f"Contact {name} added with phone number {phone_number}.")
     
     
@@ -16,6 +20,10 @@ def remove_contact(name):
     """Remove a contact from the phonebook."""
     if name in phonebook:
         del phonebook[name]
+        # atver datni rakstīšanai JSON formātā
+        datne = open("phonebook.json", "w", encoding="UTF-8")
+        json.dump(phonebook, datne)  # saglabā objektu datnē
+        datne.close() 
         print(f"Contact {name} removed.")
     else:
         print(f"Contact {name} not found.")
@@ -62,13 +70,11 @@ def main():
             search_contact(name)
             
         elif choice == '4':
+  
             list_contacts()
             
         elif choice == '5':
             print("Exiting phonebook.")
-            datne = open("phonebook.json", "w", encoding="UTF-8")  # atver datni rakstīšanai JSON formātā
-            json.dump(phonebook, datne)  # saglabā objektu datnē
-            datne.close()   
             break
             
         else:
