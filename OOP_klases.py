@@ -20,7 +20,7 @@ class Skolotajs:
         prieksmets = input("Ievadi priekšmetu: ")
         return Skolotajs(vards, klase, prieksmets)
     def izdrukat_datus(self):
-        print(f"Skolotājs {self.vards} māca {self.klase} klasē {self.prieksmets} priekšmetu.")
+        return f"Skolotājs {self.vards} māca {self.klase} klasē {self.prieksmets} priekšmetu."
         
         
 class Prieksmets:
@@ -62,4 +62,4 @@ sk=Skolnieks.ievadi_datus()
 sl=Skolotajs.ievadi_datus()
 print(sk.izdrukat_datus())
 print("un")
-sl.izdrukat_datus()
+print(sl.izdrukat_datus())
