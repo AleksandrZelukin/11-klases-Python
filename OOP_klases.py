@@ -7,7 +7,7 @@ class Skolnieks:
         klase = input("Ievadi klasi, kurā mācās: ")
         return Skolnieks(vards, klase)
     def izdrukat_datus(self):
-        print(f"Skolnieks {self.vards} mācās {self.klase} klasē.")
+        return f"Skolnieks {self.vards} mācās {self.klase} klasē."
 
 class Skolotajs:
     def __init__(self, vards, klase,prieksmets):
@@ -60,6 +60,6 @@ class Skola:
 sk=Skolnieks.ievadi_datus() 
 
 sl=Skolotajs.ievadi_datus()
-sk.izdrukat_datus()
+print(sk.izdrukat_datus())
 print("un")
 sl.izdrukat_datus()
