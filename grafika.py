@@ -1,8 +1,8 @@
 from turtle import *
 from random import choice
-speed(100)
-x=(0, 200, 400, 600, -200, -400, -600)
-y=(0, 200, 400, 600, -200, -400, -600)
+speed(1000)
+x=(0, 100, 200, 400, -100, -200, -400)
+y=(0, 100, 200, 400, -100, -200, -400)
 # Move to starting position
 def start_position():
     penup()
@@ -16,11 +16,11 @@ def draw_square(size):
         
 def draw_pattern():
     colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange']
-    start_position()
-    for i in range(36):
-
-        pencolor(colors[i % len(colors)])
-        draw_square(100)
-        right(10)
+    for j in range(36):
+        start_position()
+        for i in range(6):
+            pencolor(colors[i % len(colors)])
+            draw_square(100)
+            right(60)
     done()
 draw_pattern()
