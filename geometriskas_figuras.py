@@ -8,33 +8,55 @@ pensize(3)
 bgcolor("lightgreen")
 
 
-kvadrats = lambda s: [forward(s), right(90)] * 4
-taisnsturis = lambda w, h: [forward(w), right(90), forward(h), right(90)] * 2
-trijsturis = lambda s: [forward(s), right(120)] * 3
-aplis = lambda r: circle(r)
-zvaigzne = lambda s: [forward(s), right(144)] * 5
-daudzsturis = lambda s, n: [forward(s), right(360/n)] * n
-zvaigzne_ar_apskaiti = lambda s, n: [forward(s), right(180 - 180/n)] * n
-
+def zvaigzne_ar_apskaiti(s, n):
+    clear() # Notīra iepriekšējo zīmējumu
+    for _ in range(n):
+        forward(s)
+        right(180 - 180/n)
+def daudzsturis(s, n):
+    clear() # Notīra iepriekšējo zīmējumu
+    for _ in range(n):
+        forward(s)
+        right(360/n)
+def zvaigzne(s):
+    clear() # Notīra iepriekšējo zīmējumu
+    for _ in range(5):
+        forward(s)
+        right(144)
+def aplis(r):
+    clear() # Notīra iepriekšējo zīmējumu
+    circle(r)
 
 while True:
     print("Ko vēlies zīmēt?")
-    figura = input("Ievadi figūras nosaukumu (trijstūris, kvadrāts, piecstūris, sešstūris): ")
+    figura = input("""Ievadi figūras nosaukumu 
+                   trijstūris - 1, 
+                   kvadrāts - 2, 
+                   piecstūris - 3, 
+                   sešstūris - 4, 
+                   zvaigzne - 5, 
+                   aplis - 6, 
+                   daudzstūris - 7, 
+                   zvaigzne_ar_apskaiti - 8): """)
 
-    if figura == "kvadrāts":
-        kvadrats(100)
-    elif figura == "taisnstūris":
-        taisnsturis(200, 100)
-    elif figura == "trijstūris":
-        trijsturis(100)
-    elif figura == "aplis":
-        aplis(50)
-    elif figura == "zvaigzne":
-        zvaigzne(100)
-    elif figura == "daudzstūris":
+    if figura == "1":
+        daudzsturis(100, 3)
+    elif figura == "2":
+        daudzsturis(100, 4)
+    elif figura == "3":
         daudzsturis(100, 5)
-    elif figura == "zvaigzne_ar_apskaiti":
+    elif figura == "4":
+        daudzsturis(100, 6)
+    elif figura == "5":
+        zvaigzne(100)
+    elif figura == "6":
+        aplis(50)
+    elif figura == "7":
+        daudzsturis(100, 5)
+    elif figura == "8":
         zvaigzne_ar_apskaiti(100, 5)
+    elif figura.lower() == "stop":
+        print("Beidzam zīmēt!")
+        break
     else:
         print("Neatpazīta figūra!")
-
