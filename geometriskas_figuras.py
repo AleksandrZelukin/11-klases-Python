@@ -4,9 +4,10 @@ import random
 krasa = ["red","blue","orange","green","yellow"]
 
 a = t.Screen()
-a.setup(800,800)
+a.setup(700,800)
 
-tk.Label(text="Zīmējam ģeometriskas figūras!").pack()
+label1=tk.Label(text="Zīmējam ģeometriskas figūras!", font=("Helvetika",24),background="lightblue",foreground=krasa[1])
+label1.place(x=150, y=5)
 t.shape("turtle")
 
 t.speed(10)
@@ -41,49 +42,14 @@ btn1 = tk.Button(text="Sešstūris", command=daudzsturis,width=20, height=2)
 btn1.place(x=50, y=50)
 
 btn2 = tk.Button(text="Zvaigzne", command=zvaigzne,width=20, height=2)
-btn2.place(x=50, y=100)
+btn2.place(x=200, y=50)
 
 btn3 = tk.Button(text="Aplis", command=aplis,width=20, height=2)
-btn3.place(x=50, y=150)
+btn3.place(x=350, y=50)
 
 btn4 = tk.Button(text="Kvadrāts", command=kvadrats,width=20, height=2)
-btn4.place(x=50, y=200)
+btn4.place(x=500, y=50)
 
-btn5 = tk.Button(text="Quit", command=exit,width=20, height=2)
-btn5.place(x=50, y=250)
-# while True:
-#     print("Ko vēlies zīmēt?")
-#     figura = input("""Ievadi figūras nosaukumu 
-#                    trijstūris - 1, 
-#                    kvadrāts - 2, 
-#                    piecstūris - 3, 
-#                    sešstūris - 4, 
-#                    zvaigzne - 5, 
-#                    aplis - 6, 
-#                    daudzstūris - 7, 
-#                    zvaigzne_ar_apskaiti - 8): """)
-
-#     if figura == "1":
-#         daudzsturis(100, 3)
-#     elif figura == "2":
-#         daudzsturis(100, 4)
-#     elif figura == "3":
-#         daudzsturis(100, 5)
-#     elif figura == "4":
-#         daudzsturis(100, 6)
-#     elif figura == "5":
-#         zvaigzne(100)
-#     elif figura == "6":
-#         aplis(50)
-#     elif figura == "7":
-#         daudzsturis(100, 5)
-#     elif figura == "8":
-#         zvaigzne_ar_apskaiti(100, 5)
-#     elif figura.lower() == "stop":
-#         print("Beidzam zīmēt!")
-#         break
-#     else:
-#         print("Neatpazīta figūra!")
+btn5 = tk.Button(text="Quit", command=exit,width=85, height=2)
+btn5.place(x=50, y=100)
 t.mainloop()
-
-print("Beidzam zīmēt!")
