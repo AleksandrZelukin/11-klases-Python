@@ -1,0 +1,41 @@
+from tkinter import *
+logs=Tk()
+logs.geometry("400x400")
+logs.title("bimara decimala kalkulators")
+
+
+num1 = Spinbox(width=2,from_=0.0, to=1.0, state="readonly")
+num1.place(x=40,y=30)
+num2 = Spinbox(width=2,from_=0.0, to=1.0, state="readonly")
+num2.place(x=70,y=30)
+num3 = Spinbox(width=2,from_=0.0, to=1.0, state="readonly")
+num3.place(x=100,y=30)
+num4 = Spinbox(width=2,from_=0.0, to=1.0, state="readonly")
+num4.place(x=130,y=30)
+num5 = Spinbox(width=2,from_=0.0, to=1.0, state="readonly")
+num5.place(x=160,y=30)
+num6 = Spinbox(width=2,from_=0.0, to=1.0, state="readonly")
+num6.place(x=190,y=30)
+num7 = Spinbox(width=2,from_=0.0, to=1.0, state="readonly")
+num7.place(x=220,y=30)
+num8 = Spinbox(width=2,from_=0.0, to=1.0, state="readonly")
+num8.place(x=250,y=30)
+rezultats = Label(font=("Arial", 24))
+rezultats.place(x=160,y=80)
+
+def s():
+  pirm = (num1.get())
+  otr = (num2.get())
+  tres = (num3.get())
+  cet = (num4.get())
+  piek = (num5.get())
+  sest = (num6.get())
+  sept = (num7.get())
+  astot = (num8.get())
+  rez = int(pirm+otr+tres+cet+piek+sest+sept+astot, 2)
+  rezultats.configure(text = rez)
+  
+  
+poga1 = Button(text="aprēķinat",command=s)
+poga1.place(x=290,y=25)
+logs.mainloop()
