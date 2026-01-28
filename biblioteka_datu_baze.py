@@ -48,6 +48,15 @@ kursor.execute('''
     (2, 2, '2023-02-01', '2023-02-15'),
     (3, 3, '2023-03-01', '2023-03-15')
 ''')
+
+kursor.execute('''SELECT vards, uzvards, aizdevuma_datums, atgrieziena_datums,nosaukums,autors,izdošanas_gads
+               FROM aizdevumi JOIN lasitaji ON aizdevumi.id_lasitajs = lasitaji.id_lasitajs
+               JOIN gramatas ON aizdevumi.id_gramata = gramatas.id_gramata''')
+aizdevumi = kursor.fetchall()
+print("Vārds, Uzvārds, Aizdevuma Datums, Atgrieziena Datums, Nosaukums, Autors, Izdošanas Gads")
+for aizdevums in aizdevumi:
+    print(aizdevums)
+
 kursor.close()
 datu_baze.commit()
 datu_baze.close()
